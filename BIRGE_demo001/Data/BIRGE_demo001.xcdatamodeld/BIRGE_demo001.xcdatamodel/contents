@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24411" systemVersion="25A362" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Booking" representedClassName=".BookingEntity" syncable="YES">
+        <attribute name="bookingId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="bookingStatus" optional="YES" attributeType="String"/>
+        <attribute name="bookingTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="passengerCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pickupLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pickupLng" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pickupLocation" optional="YES" attributeType="String"/>
+        <attribute name="specialRequests" optional="YES" attributeType="String"/>
+        <relationship name="passenger" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="booking" inverseEntity="User"/>
+        <relationship name="ride" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ride" inverseName="booking" inverseEntity="Ride"/>
+    </entity>
+    <entity name="DriverProfile" representedClassName=".DriverProfileEntity" syncable="YES">
+        <attribute name="carModel" optional="YES" attributeType="String"/>
+        <attribute name="carPlate" optional="YES" attributeType="String"/>
+        <attribute name="currentStatus" optional="YES" attributeType="String"/>
+        <attribute name="licenseNumber" optional="YES" attributeType="String"/>
+        <attribute name="maxCapacity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+    </entity>
+    <entity name="Ride" representedClassName=".RideEntity" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="currentPassengers" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="departureAddress" optional="YES" attributeType="String"/>
+        <attribute name="destinationAddress" optional="YES" attributeType="String"/>
+        <attribute name="estimatedDuration" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="groupDiscountPercent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="maxPassengers" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rideId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="rideName" optional="YES" attributeType="String"/>
+        <attribute name="scheduledTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="booking" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="ride" inverseEntity="Booking"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+        <relationship name="driver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName=".UserEntity" syncable="YES">
+        <attribute name="avgRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isVerified" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="passwordHash" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="registrationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="userType" optional="YES" attributeType="String"/>
+        <relationship name="booking" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="passenger" inverseEntity="Booking"/>
+    </entity>
+</model>

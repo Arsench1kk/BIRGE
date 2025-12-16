@@ -6,11 +6,8 @@
 //
 //
 
-public import Foundation
-public import CoreData
-
-
-public typealias UserEntityCoreDataPropertiesSet = NSSet
+import Foundation
+import CoreData
 
 extension UserEntity {
 
@@ -18,16 +15,16 @@ extension UserEntity {
         return NSFetchRequest<UserEntity>(entityName: "User")
     }
 
-    @NSManaged public var avgRating: Double
-    @NSManaged public var email: String?
-    @NSManaged public var firstName: String?
     @NSManaged public var id: UUID?
-    @NSManaged public var isVerified: Bool
+    @NSManaged public var firstName: String?
     @NSManaged public var lastName: String?
-    @NSManaged public var passwordHash: String?
+    @NSManaged public var email: String?
     @NSManaged public var phone: String?
-    @NSManaged public var registrationDate: Date?
+    @NSManaged public var passwordHash: String?
     @NSManaged public var userType: String?
+    @NSManaged public var avgRating: Double
+    @NSManaged public var registrationDate: Date?
+    @NSManaged public var isVerified: Bool
     @NSManaged public var booking: NSSet?
 
 }

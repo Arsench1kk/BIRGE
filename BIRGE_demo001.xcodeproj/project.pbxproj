@@ -6,12 +6,35 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0449FA7C2EC1D81300AFCC13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA642EC1D81300AFCC13 /* AppDelegate.swift */; };
+		0449FA7E2EC1D81300AFCC13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA692EC1D81300AFCC13 /* SceneDelegate.swift */; };
+		0449FA8B2EC1DC5100AFCC13 /* BookingEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA842EC1DC5100AFCC13 /* BookingEntity+CoreDataProperties.swift */; };
+		0449FA8C2EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA852EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataClass.swift */; };
+		0449FA8D2EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA862EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataProperties.swift */; };
+		0449FA8E2EC1DC5100AFCC13 /* RideEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA872EC1DC5100AFCC13 /* RideEntity+CoreDataClass.swift */; };
+		0449FA8F2EC1DC5100AFCC13 /* BookingEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA832EC1DC5100AFCC13 /* BookingEntity+CoreDataClass.swift */; };
+		0449FA902EC1DC5100AFCC13 /* RideEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA882EC1DC5100AFCC13 /* RideEntity+CoreDataProperties.swift */; };
+		0449FA912EC1DC5100AFCC13 /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA892EC1DC5100AFCC13 /* UserEntity+CoreDataClass.swift */; };
+		0449FA922EC1DC5100AFCC13 /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449FA8A2EC1DC5100AFCC13 /* UserEntity+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		04B717CF2EC1B2B600230595 /* BIRGE_demo001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIRGE_demo001.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0449FA642EC1D81300AFCC13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0449FA692EC1D81300AFCC13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0449FA832EC1DC5100AFCC13 /* BookingEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BookingEntity+CoreDataClass.swift"; path = "BIRGE_demo001/Models/BookingEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0449FA842EC1DC5100AFCC13 /* BookingEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BookingEntity+CoreDataProperties.swift"; path = "BIRGE_demo001/Models/BookingEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0449FA852EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DriverProfileEntity+CoreDataClass.swift"; path = "BIRGE_demo001/Models/DriverProfileEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0449FA862EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DriverProfileEntity+CoreDataProperties.swift"; path = "BIRGE_demo001/Models/DriverProfileEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0449FA872EC1DC5100AFCC13 /* RideEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RideEntity+CoreDataClass.swift"; path = "BIRGE_demo001/Models/RideEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0449FA882EC1DC5100AFCC13 /* RideEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RideEntity+CoreDataProperties.swift"; path = "BIRGE_demo001/Models/RideEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0449FA892EC1DC5100AFCC13 /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserEntity+CoreDataClass.swift"; path = "BIRGE_demo001/Models/UserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0449FA8A2EC1DC5100AFCC13 /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserEntity+CoreDataProperties.swift"; path = "BIRGE_demo001/Models/UserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0469ADA72EF17087004A332F /* BIRGE_demo001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIRGE_demo001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		04B717E42EC1B2B800230595 /* Exceptions for "BIRGE_demo001" folder in "BIRGE_demo001" target */ = {
+		0449FAAB2EC21AF400AFCC13 /* Exceptions for "BIRGE_demo001" folder in "BIRGE_demo001" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -24,7 +47,7 @@
 		04B717D12EC1B2B600230595 /* BIRGE_demo001 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				04B717E42EC1B2B800230595 /* Exceptions for "BIRGE_demo001" folder in "BIRGE_demo001" target */,
+				0449FAAB2EC21AF400AFCC13 /* Exceptions for "BIRGE_demo001" folder in "BIRGE_demo001" target */,
 			);
 			path = BIRGE_demo001;
 			sourceTree = "<group>";
@@ -45,17 +68,19 @@
 		04B717C62EC1B2B600230595 = {
 			isa = PBXGroup;
 			children = (
+				0449FA832EC1DC5100AFCC13 /* BookingEntity+CoreDataClass.swift */,
+				0449FA842EC1DC5100AFCC13 /* BookingEntity+CoreDataProperties.swift */,
+				0449FA852EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataClass.swift */,
+				0449FA862EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataProperties.swift */,
+				0449FA872EC1DC5100AFCC13 /* RideEntity+CoreDataClass.swift */,
+				0449FA882EC1DC5100AFCC13 /* RideEntity+CoreDataProperties.swift */,
+				0449FA892EC1DC5100AFCC13 /* UserEntity+CoreDataClass.swift */,
+				0449FA8A2EC1DC5100AFCC13 /* UserEntity+CoreDataProperties.swift */,
 				04B717D12EC1B2B600230595 /* BIRGE_demo001 */,
-				04B717D02EC1B2B600230595 /* Products */,
+				0449FA642EC1D81300AFCC13 /* AppDelegate.swift */,
+				0449FA692EC1D81300AFCC13 /* SceneDelegate.swift */,
+				0469ADA72EF17087004A332F /* BIRGE_demo001.app */,
 			);
-			sourceTree = "<group>";
-		};
-		04B717D02EC1B2B600230595 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				04B717CF2EC1B2B600230595 /* BIRGE_demo001.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,7 +105,7 @@
 			packageProductDependencies = (
 			);
 			productName = BIRGE_demo001;
-			productReference = 04B717CF2EC1B2B600230595 /* BIRGE_demo001.app */;
+			productReference = 0469ADA72EF17087004A332F /* BIRGE_demo001.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +133,7 @@
 			mainGroup = 04B717C62EC1B2B600230595;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 04B717D02EC1B2B600230595 /* Products */;
+			productRefGroup = 04B717C62EC1B2B600230595;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -132,6 +157,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0449FA8B2EC1DC5100AFCC13 /* BookingEntity+CoreDataProperties.swift in Sources */,
+				0449FA8C2EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataClass.swift in Sources */,
+				0449FA8D2EC1DC5100AFCC13 /* DriverProfileEntity+CoreDataProperties.swift in Sources */,
+				0449FA8E2EC1DC5100AFCC13 /* RideEntity+CoreDataClass.swift in Sources */,
+				0449FA8F2EC1DC5100AFCC13 /* BookingEntity+CoreDataClass.swift in Sources */,
+				0449FA902EC1DC5100AFCC13 /* RideEntity+CoreDataProperties.swift in Sources */,
+				0449FA912EC1DC5100AFCC13 /* UserEntity+CoreDataClass.swift in Sources */,
+				0449FA922EC1DC5100AFCC13 /* UserEntity+CoreDataProperties.swift in Sources */,
+				0449FA7C2EC1D81300AFCC13 /* AppDelegate.swift in Sources */,
+				0449FA7E2EC1D81300AFCC13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +181,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YT2W57F27G;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = BIRGE_demo001/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -178,7 +213,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YT2W57F27G;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = BIRGE_demo001/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

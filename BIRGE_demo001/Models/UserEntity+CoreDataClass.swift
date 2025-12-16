@@ -6,12 +6,10 @@
 //
 //
 
-public import Foundation
-public import CoreData
+import Foundation
+import CoreData
 
-public typealias UserEntityCoreDataClassSet = NSSet
-
-
+@objc(UserEntity)
 public class UserEntity: NSManagedObject {
 
 }

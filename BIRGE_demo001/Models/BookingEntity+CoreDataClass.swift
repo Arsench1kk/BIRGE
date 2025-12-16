@@ -6,12 +6,10 @@
 //
 //
 
-public import Foundation
-public import CoreData
+import Foundation
+import CoreData
 
-public typealias BookingEntityCoreDataClassSet = NSSet
-
-
+@objc(BookingEntity)
 public class BookingEntity: NSManagedObject {
 
 }

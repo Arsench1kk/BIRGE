@@ -1,18 +1,24 @@
+//
+//  CardView.swift
+//  BIRGE_demo001
+//
+//  Created by Арсен Абдухалық on 16.12.2025.
+//
+
+
 import UIKit
 
 @IBDesignable
 class CardView: UIView {
 
-    // --- 1. Скругление (Radius) ---
-    // CSS: --radius: 0.625rem; (это 10px)
+
     @IBInspectable var cornerRadius: CGFloat = 10 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
 
-    // --- 2. Граница (Border) ---
-    // CSS: --border: rgba(0, 0, 0, 0.1);
+
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
@@ -25,8 +31,7 @@ class CardView: UIView {
         }
     }
 
-    // --- 3. Тень (Shadow) ---
-    // CSS: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+
     @IBInspectable var shadowColor: UIColor = .black {
         didSet {
             layer.shadowColor = shadowColor.cgColor

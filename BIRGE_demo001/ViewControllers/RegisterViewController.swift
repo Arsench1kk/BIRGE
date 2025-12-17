@@ -109,42 +109,35 @@ class RegisterViewController: UIViewController {
     private func validateInputs() -> Bool {
         var isValid = true
         
-        // Reset all error states
         [firstNameTextField, lastNameTextField, emailTextField, phoneTextField, passwordTextField, confirmPasswordTextField].forEach {
             $0.setErrorState(false)
         }
         
-        // Validate first name
         if let firstName = firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), firstName.isEmpty {
             firstNameTextField.setErrorState(true)
             isValid = false
         }
         
-        // Validate last name
         if let lastName = lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), lastName.isEmpty {
             lastNameTextField.setErrorState(true)
             isValid = false
         }
         
-        // Validate email
         if let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), email.isEmpty || !isValidEmail(email) {
             emailTextField.setErrorState(true)
             isValid = false
         }
         
-        // Validate phone
         if let phone = phoneTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), phone.isEmpty {
             phoneTextField.setErrorState(true)
             isValid = false
         }
         
-        // Validate password
         if let password = passwordTextField.text, password.isEmpty || password.count < 8 {
             passwordTextField.setErrorState(true)
             isValid = false
         }
         
-        // Validate password confirmation
         if let confirmPassword = confirmPasswordTextField.text,
            let password = passwordTextField.text,
            confirmPassword != password {
@@ -187,14 +180,29 @@ class RegisterViewController: UIViewController {
     // MARK: - Navigation
     private func showDashboard(for user: UserEntity) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let dashboardVC = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as? DashboardViewController {
+        
+        guard let tabBarController = storyboard.instantiateViewController(
+            withIdentifier: "MainTabBarController"
+        ) as? UITabBarController else {
+            return
+        }
+        
+        if let nav = tabBarController.viewControllers?.first as? UINavigationController,
+           let dashboardVC = nav.viewControllers.first as? DashboardViewController {
             dashboardVC.currentUser = user
-            if let window = UIApplication.shared.windows.first {
-                window.rootViewController = dashboardVC
-                UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil)
-            }
+        }
+        
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = tabBarController
+            UIView.transition(
+                with: window,
+                duration: 0.3,
+                options: .transitionCrossDissolve,
+                animations: nil
+            )
         }
     }
+
     
     private func showError(_ message: String) {
         errorLabel.text = message

@@ -100,6 +100,7 @@ class CoreDataManager {
         }
         
         saveContext()
+        UserDefaults.standard.set(email.lowercased(), forKey: userDefaultsKey)
         print("✅ User registered: \(email)")
         return (true, "Registration successful")
     }
@@ -347,8 +348,11 @@ class CoreDataManager {
     
     // MARK: - Helper Methods
     private func hashPassword(_ password: String) -> String {
-        return String(password.hashValue)
+        return password
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
     }
+
     
     // MARK: - Demo Data
     func preloadDemoData() {

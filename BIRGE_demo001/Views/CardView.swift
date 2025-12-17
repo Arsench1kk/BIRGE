@@ -12,7 +12,7 @@ import UIKit
 class CardView: UIView {
 
 
-    @IBInspectable var cornerRadius: CGFloat = 10 {
+    @IBInspectable var cornerRadius: CGFloat = 25 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
@@ -38,7 +38,7 @@ class CardView: UIView {
         }
     }
     
-    @IBInspectable var shadowOpacity: Float = 0 {
+    @IBInspectable var shadowOpacity: Float = 4 {
         didSet {
             layer.shadowOpacity = shadowOpacity
         }
@@ -50,7 +50,7 @@ class CardView: UIView {
         }
     }
     
-    @IBInspectable var shadowRadius: CGFloat = 0 {
+    @IBInspectable var shadowRadius: CGFloat = 2 {
         didSet {
             layer.shadowRadius = shadowRadius
         }

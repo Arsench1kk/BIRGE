@@ -8,7 +8,6 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    // MARK: - IBOutlets
     @IBOutlet weak var emailTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var userTypeSegmentedControl: UISegmentedControl!
@@ -17,10 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var demoInfoLabel: UILabel!
     
-    // MARK: - Properties
     private let authService = AuthService.shared
     
-    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -29,29 +26,8 @@ class LoginViewController: UIViewController {
     
     // MARK: - Setup
     private func setupUI() {
-        title = "BIRGE Login"
-        
-        // Configure text fields
         emailTextField.type = .email
         passwordTextField.type = .password
-        
-        // Configure buttons
-        loginButton.backgroundColor = .systemBlue
-        loginButton.setTitleColor(.white, for: .normal)
-        loginButton.layer.cornerRadius = 8
-        
-        registerButton.setTitleColor(.systemBlue, for: .normal)
-        
-        // Demo info
-        demoInfoLabel.text = "Demo Accounts:\nPassenger: alia@demo.com / password123\nDriver: aslan@demo.com / password123"
-        demoInfoLabel.numberOfLines = 0
-        demoInfoLabel.textColor = .systemGray
-        demoInfoLabel.font = UIFont.systemFont(ofSize: 12)
-        
-        // Hide error label initially
-        errorLabel.isHidden = true
-        errorLabel.textColor = .systemRed
-        errorLabel.numberOfLines = 0
         
         // Add tap gesture to dismiss keyboard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -92,11 +68,9 @@ class LoginViewController: UIViewController {
         showRegistrationScreen(for: userType)
     }
     
-    // MARK: - Validation
     private func validateInputs() -> Bool {
         var isValid = true
         
-        // Validate email
         if let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), email.isEmpty || !isValidEmail(email) {
             emailTextField.setErrorState(true)
             isValid = false
@@ -104,7 +78,6 @@ class LoginViewController: UIViewController {
             emailTextField.setErrorState(false)
         }
         
-        // Validate password
         if let password = passwordTextField.text, password.isEmpty {
             passwordTextField.setErrorState(true)
             isValid = false
@@ -128,14 +101,29 @@ class LoginViewController: UIViewController {
     // MARK: - Navigation
     private func showDashboard(for user: UserEntity) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let dashboardVC = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as? DashboardViewController {
+        
+        guard let tabBarController = storyboard.instantiateViewController(
+            withIdentifier: "MainTabBarController"
+        ) as? UITabBarController else {
+            return
+        }
+        
+        if let nav = tabBarController.viewControllers?.first as? UINavigationController,
+           let dashboardVC = nav.viewControllers.first as? DashboardViewController {
             dashboardVC.currentUser = user
-            if let window = UIApplication.shared.windows.first {
-                window.rootViewController = dashboardVC
-                UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil)
-            }
+        }
+        
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = tabBarController
+            UIView.transition(
+                with: window,
+                duration: 0.3,
+                options: .transitionCrossDissolve,
+                animations: nil
+            )
         }
     }
+
     
     private func showRegistrationScreen(for userType: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
